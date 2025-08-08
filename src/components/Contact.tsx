@@ -43,19 +43,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@portfolio.com",
-      href: "mailto:hello@portfolio.com"
+      value: "blendberwari25@gmail.com",
+      href: "mailto:blendberwari25@gmail,com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+964 (750) 335 18 53",
+      href: "tel:+964 0750 335 18 53"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Zakho , Kurdistan",
       href: "#"
     }
   ];
@@ -64,7 +64,7 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Blendddd",
       color: "hover:text-foreground"
     },
     {
@@ -76,7 +76,7 @@ const Contact = () => {
     {
       icon: Twitter,
       label: "Twitter",
-      href: "https://twitter.com",
+      href: "https://x.com/BlndAHaji",
       color: "hover:text-blue-400"
     }
   ];
