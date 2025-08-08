@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 const Work = () => {
   const projects = [
@@ -87,16 +89,31 @@ const Work = () => {
                   ))}
                 </div>
                 
-                <div className="flex gap-3">
-                  <Button 
-                    size="sm" 
-                    className="flex-1"
-                    disabled={project.status === "Planning" || project.liveUrl === "#"}
-                    onClick={() => project.liveUrl !== "#" && window.open(project.liveUrl, "_blank", "width=1200,height=800,scrollbars=yes,resizable=yes")}
-                  >
-                    <ExternalLink size={16} className="mr-2" />
-                    View Live
-                  </Button>
+                 <div className="flex gap-3">
+                   <Dialog>
+                     <DialogTrigger asChild>
+                       <Button 
+                         size="sm" 
+                         className="flex-1"
+                         disabled={project.status === "Planning" || project.liveUrl === "#"}
+                       >
+                         <ExternalLink size={16} className="mr-2" />
+                         View Live
+                       </Button>
+                     </DialogTrigger>
+                     <DialogContent className="max-w-6xl max-h-[90vh] p-0">
+                       <DialogHeader className="p-6 pb-0">
+                         <DialogTitle>{project.title}</DialogTitle>
+                       </DialogHeader>
+                       <div className="p-6 pt-0">
+                         <iframe
+                           src={project.liveUrl !== "#" ? project.liveUrl : ""}
+                           className="w-full h-[70vh] border-0 rounded-lg"
+                           title={project.title}
+                         />
+                       </div>
+                     </DialogContent>
+                   </Dialog>
                   <Button variant="outline" size="sm" disabled>
                     <Github size={16} className="mr-2" />
                     Code
