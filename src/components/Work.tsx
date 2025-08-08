@@ -92,7 +92,7 @@ const Work = () => {
                     size="sm" 
                     className="flex-1"
                     disabled={project.status === "Planning" || project.liveUrl === "#"}
-                    onClick={() => project.liveUrl !== "#" && (window.location.href = project.liveUrl)}
+                    onClick={() => project.liveUrl !== "#" && window.open(project.liveUrl, "_blank", "width=1200,height=800,scrollbars=yes,resizable=yes")}
                   >
                     <ExternalLink size={16} className="mr-2" />
                     View Live
