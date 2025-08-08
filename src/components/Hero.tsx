@@ -37,7 +37,9 @@ const Hero = () => {
                 size="lg" 
                 className="border-primary/30 hover:border-primary transition-all duration-300 text-lg px-8 py-3"
               >
-              
+                <Download className="mr-2" size={20} />
+                Download CV
+              </Button>
             </div>
           </div>
 
