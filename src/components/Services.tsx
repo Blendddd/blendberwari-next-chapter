@@ -19,32 +19,11 @@ const Services = () => {
       price: "Starting from $599"
     },
     {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "Cross-platform mobile applications with native performance.",
-      features: ["React Native", "iOS & Android", "App Store Deployment", "Native Features"],
-      price: "Starting from $1499"
-    },
-    {
       icon: Globe,
       title: "Website Design",
       description: "Professional websites that represent your brand and engage your audience.",
       features: ["Custom Design", "CMS Integration", "SEO Optimization", "Analytics Setup"],
       price: "Starting from $799"
-    },
-    {
-      icon: Zap,
-      title: "Performance Optimization",
-      description: "Speed up your existing website and improve user experience.",
-      features: ["Speed Analysis", "Code Optimization", "Image Compression", "CDN Setup"],
-      price: "Starting from $399"
-    },
-    {
-      icon: Users,
-      title: "Consultation",
-      description: "Strategic guidance for your digital projects and technology decisions.",
-      features: ["Technical Strategy", "Code Review", "Architecture Planning", "Team Training"],
-      price: "Starting from $149/hr"
     }
   ];
 
