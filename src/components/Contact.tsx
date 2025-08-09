@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Instagram, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -68,15 +68,15 @@ const Contact = () => {
       color: "hover:text-foreground"
     },
     {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://linkedin.com",
-      color: "hover:text-blue-400"
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://instagram.com/blendd.22",
+      color: "hover:text-pink-400"
     },
     {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://x.com/BlndAHaji",
+      icon: X,
+      label: "X",
+      href: "https://x.com/blendd.22",
       color: "hover:text-blue-400"
     }
   ];
