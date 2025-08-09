@@ -1,4 +1,5 @@
-import { Github, Instagram, Heart } from "lucide-react";
+
+import { Github, Instagram, X, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,6 +14,11 @@ const Footer = () => {
       icon: Instagram,
       label: "Instagram",
       href: "https://instagram.com/blendd.22"
+    },
+    {
+      icon: X,
+      label: "X",
+      href: "https://x.com/blendd.22"
     }
   ];
 
