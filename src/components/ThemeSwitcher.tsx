@@ -7,22 +7,26 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Palette } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
-
-const themes = [
-  { value: "cyber", label: "Cyber Blue", color: "bg-blue-500" },
-  { value: "ocean", label: "Ocean Teal", color: "bg-teal-500" },
-  { value: "sunset", label: "Sunset Orange", color: "bg-orange-500" },
-] as const;
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const themes = [
+    { value: "cyber", label: t.theme.cyber, color: "bg-blue-500" },
+    { value: "ocean", label: t.theme.ocean, color: "bg-teal-500" },
+    { value: "sunset", label: t.theme.sunset, color: "bg-orange-500" },
+  ] as const;
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="sm" className="gap-2">
           <Palette size={16} />
-          <span className="hidden sm:inline">Theme</span>
+          <span className="hidden sm:inline">{t.theme.label}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -307,3 +307,26 @@
     }
   }
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  .fade-in-left {
+    transform: translateX(30px);
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+  
+  .fade-in-right {
+    transform: translateX(-30px);
+    animation: fadeInRight 0.6s ease-out forwards;
+  }
+  
+  .link-underline::after {
+    right: 0;
+    left: auto;
+    origin-bottom-left: origin-bottom-right;
+  }
+  
+  .link-underline:hover::after {
+    origin-bottom-right: origin-bottom-left;
+  }
+}

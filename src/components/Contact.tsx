@@ -5,9 +5,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Send, Github, Instagram, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = translations[language];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -86,11 +90,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span className="gradient-text">Touch</span>
+            {t.contact.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to bring your project to life? Let's discuss how I can help you 
-            achieve your goals. I'm always excited to work on new challenges.
+            {t.contact.description}
           </p>
         </div>
 
@@ -99,9 +102,9 @@ const Contact = () => {
           <div className="lg:col-span-1 fade-in-left">
             <Card className="glass h-fit">
               <CardHeader>
-                <CardTitle className="gradient-text">Let's Connect</CardTitle>
+                <CardTitle className="gradient-text">{t.contact.subtitle}</CardTitle>
                 <CardDescription>
-                  Feel free to reach out through any of these channels.
+                  {t.contact.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -130,7 +133,7 @@ const Contact = () => {
                 })}
 
                 <div className="pt-6 border-t border-border">
-                  <h4 className="font-semibold mb-4">Follow Me</h4>
+                  <h4 className="font-semibold mb-4">{t.contact.socialTitle}</h4>
                   <div className="flex space-x-4">
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
@@ -156,9 +159,9 @@ const Contact = () => {
           <div className="lg:col-span-2 fade-in-right">
             <Card className="glass">
               <CardHeader>
-                <CardTitle>Send me a message</CardTitle>
+                <CardTitle>{t.contact.send}</CardTitle>
                 <CardDescription>
-                  I'll get back to you within 24 hours.
+                  {t.contact.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -166,7 +169,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Name *
+                        {t.contact.name} *
                       </label>
                       <Input
                         id="name"
@@ -174,13 +177,13 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Your name"
+                        placeholder={t.contact.namePlaceholder}
                         className="bg-background/50"
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email *
+                        {t.contact.email} *
                       </label>
                       <Input
                         id="email"
@@ -189,7 +192,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="your.email@example.com"
+                        placeholder={t.contact.emailPlaceholder}
                         className="bg-background/50"
                       />
                     </div>
@@ -212,7 +215,7 @@ const Contact = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message *
+                      {t.contact.message} *
                     </label>
                     <Textarea
                       id="message"
@@ -220,7 +223,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      placeholder="Tell me about your project..."
+                      placeholder={t.contact.messagePlaceholder}
                       rows={5}
                       className="bg-background/50"
                     />
@@ -240,7 +243,7 @@ const Contact = () => {
                     ) : (
                       <>
                         <Send className="mr-2" size={20} />
-                        Send Message
+                        {t.contact.send}
                       </>
                     )}
                   </Button>
