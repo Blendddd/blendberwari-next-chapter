@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, User, Briefcase, Mail, Settings } from "lucide-react";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,14 +80,17 @@ const Navigation = () => {
               </div>
             </div>
             
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {isOpen ? <X size={20} /> : <Menu size={20} />}
-              </Button>
+            <div className="flex items-center gap-4">
+              <ThemeSwitcher />
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  {isOpen ? <X size={20} /> : <Menu size={20} />}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -115,6 +119,9 @@ const Navigation = () => {
                   </button>
                 );
               })}
+              <div className="pt-2 border-t border-border/50">
+                <ThemeSwitcher />
+              </div>
             </div>
           </nav>
         </div>
