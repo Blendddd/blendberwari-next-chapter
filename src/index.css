@@ -70,104 +70,104 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Ocean Teal Theme */
+  /* Ocean Teal Theme - Updated with deeper aqua tones */
   .ocean {
-    --background: 184 91% 17%;
-    --foreground: 180 100% 97%;
+    --background: 192 84% 8%;
+    --foreground: 180 100% 94%;
 
-    --card: 185 84% 25%;
-    --card-foreground: 180 100% 97%;
+    --card: 193 70% 12%;
+    --card-foreground: 180 100% 94%;
 
-    --popover: 185 84% 25%;
-    --popover-foreground: 180 100% 97%;
+    --popover: 193 70% 12%;
+    --popover-foreground: 180 100% 94%;
 
-    --primary: 178 100% 38%;
-    --primary-foreground: 184 91% 17%;
-    --primary-glow: 174 100% 50%;
+    --primary: 180 100% 25%;
+    --primary-foreground: 192 84% 8%;
+    --primary-glow: 175 100% 35%;
 
-    --secondary: 185 84% 35%;
-    --secondary-foreground: 180 100% 97%;
+    --secondary: 193 70% 18%;
+    --secondary-foreground: 180 100% 94%;
 
-    --muted: 185 84% 30%;
-    --muted-foreground: 180 50% 75%;
+    --muted: 193 70% 15%;
+    --muted-foreground: 180 40% 70%;
 
-    --accent: 166 73% 44%;
-    --accent-foreground: 180 100% 97%;
+    --accent: 168 84% 30%;
+    --accent-foreground: 180 100% 94%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 180 100% 97%;
+    --destructive-foreground: 180 100% 94%;
 
-    --border: 185 84% 35%;
-    --input: 185 84% 35%;
-    --ring: 178 100% 38%;
+    --border: 193 70% 18%;
+    --input: 193 70% 18%;
+    --ring: 180 100% 25%;
 
     /* Custom Portfolio Colors */
-    --hero-bg: 184 91% 17%;
-    --hero-accent: 178 100% 38%;
-    --hero-glow: 174 100% 50%;
-    --nav-bg: 185 84% 25%;
-    --glass-bg: 185 84% 25%;
+    --hero-bg: 192 84% 8%;
+    --hero-accent: 180 100% 25%;
+    --hero-glow: 175 100% 35%;
+    --nav-bg: 193 70% 12%;
+    --glass-bg: 193 70% 12%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(178 100% 38%), hsl(166 73% 44%));
-    --gradient-hero: linear-gradient(135deg, hsl(184 91% 17%) 0%, hsl(185 84% 25%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(185 84% 25%) 0%, hsl(185 84% 30%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(178 100% 38% / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 25%), hsl(168 84% 30%));
+    --gradient-hero: linear-gradient(135deg, hsl(192 84% 8%) 0%, hsl(193 70% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(193 70% 12%) 0%, hsl(193 70% 15%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(180 100% 25% / 0.3), transparent 70%);
 
     /* Shadows */
-    --shadow-glow: 0 0 30px hsl(178 100% 38% / 0.3);
-    --shadow-card: 0 10px 30px -5px hsl(184 91% 17% / 0.3);
-    --shadow-elevated: 0 20px 40px -10px hsl(184 91% 17% / 0.4);
+    --shadow-glow: 0 0 30px hsl(180 100% 25% / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(192 84% 8% / 0.3);
+    --shadow-elevated: 0 20px 40px -10px hsl(192 84% 8% / 0.4);
   }
 
-  /* Sunset Orange Theme */
+  /* Sunset Orange Theme - Updated with darker, richer sunset tones */
   .sunset {
-    --background: 25 95% 15%;
-    --foreground: 33 100% 96%;
+    --background: 20 100% 8%;
+    --foreground: 30 100% 92%;
 
-    --card: 28 100% 20%;
-    --card-foreground: 33 100% 96%;
+    --card: 24 100% 12%;
+    --card-foreground: 30 100% 92%;
 
-    --popover: 28 100% 20%;
-    --popover-foreground: 33 100% 96%;
+    --popover: 24 100% 12%;
+    --popover-foreground: 30 100% 92%;
 
-    --primary: 31 100% 60%;
-    --primary-foreground: 25 95% 15%;
-    --primary-glow: 45 100% 65%;
+    --primary: 25 100% 45%;
+    --primary-foreground: 20 100% 8%;
+    --primary-glow: 35 100% 55%;
 
-    --secondary: 28 100% 30%;
-    --secondary-foreground: 33 100% 96%;
+    --secondary: 24 100% 18%;
+    --secondary-foreground: 30 100% 92%;
 
-    --muted: 28 100% 25%;
-    --muted-foreground: 33 50% 75%;
+    --muted: 24 100% 15%;
+    --muted-foreground: 30 40% 70%;
 
-    --accent: 16 100% 66%;
-    --accent-foreground: 25 95% 15%;
+    --accent: 15 100% 50%;
+    --accent-foreground: 20 100% 8%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 33 100% 96%;
+    --destructive-foreground: 30 100% 92%;
 
-    --border: 28 100% 30%;
-    --input: 28 100% 30%;
-    --ring: 31 100% 60%;
+    --border: 24 100% 18%;
+    --input: 24 100% 18%;
+    --ring: 25 100% 45%;
 
     /* Custom Portfolio Colors */
-    --hero-bg: 25 95% 15%;
-    --hero-accent: 31 100% 60%;
-    --hero-glow: 45 100% 65%;
-    --nav-bg: 28 100% 20%;
-    --glass-bg: 28 100% 20%;
+    --hero-bg: 20 100% 8%;
+    --hero-accent: 25 100% 45%;
+    --hero-glow: 35 100% 55%;
+    --nav-bg: 24 100% 12%;
+    --glass-bg: 24 100% 12%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(31 100% 60%), hsl(16 100% 66%));
-    --gradient-hero: linear-gradient(135deg, hsl(25 95% 15%) 0%, hsl(28 100% 20%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(28 100% 20%) 0%, hsl(28 100% 25%) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(31 100% 60% / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(25 100% 45%), hsl(15 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(20 100% 8%) 0%, hsl(24 100% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(24 100% 12%) 0%, hsl(24 100% 15%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(25 100% 45% / 0.3), transparent 70%);
 
     /* Shadows */
-    --shadow-glow: 0 0 30px hsl(31 100% 60% / 0.3);
-    --shadow-card: 0 10px 30px -5px hsl(25 95% 15% / 0.3);
-    --shadow-elevated: 0 20px 40px -10px hsl(25 95% 15% / 0.4);
+    --shadow-glow: 0 0 30px hsl(25 100% 45% / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(20 100% 8% / 0.3);
+    --shadow-elevated: 0 20px 40px -10px hsl(20 100% 8% / 0.4);
   }
 
   .light {
