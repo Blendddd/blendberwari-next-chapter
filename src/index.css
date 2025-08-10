@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Modern Professional Theme */
+/* Portfolio Design System - Multi-Theme Support */
 
 @layer base {
+  /* Default Cyber Blue Theme */
   :root {
     --background: 220 26% 14%;
     --foreground: 210 40% 98%;
@@ -59,23 +60,114 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --radius: 0.75rem;
-
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Ocean Teal Theme - Updated with deeper aqua tones */
+  .ocean {
+    --background: 192 84% 8%;
+    --foreground: 180 100% 94%;
+
+    --card: 193 70% 12%;
+    --card-foreground: 180 100% 94%;
+
+    --popover: 193 70% 12%;
+    --popover-foreground: 180 100% 94%;
+
+    --primary: 180 100% 25%;
+    --primary-foreground: 192 84% 8%;
+    --primary-glow: 175 100% 35%;
+
+    --secondary: 193 70% 18%;
+    --secondary-foreground: 180 100% 94%;
+
+    --muted: 193 70% 15%;
+    --muted-foreground: 180 40% 70%;
+
+    --accent: 168 84% 30%;
+    --accent-foreground: 180 100% 94%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 100% 94%;
+
+    --border: 193 70% 18%;
+    --input: 193 70% 18%;
+    --ring: 180 100% 25%;
+
+    /* Custom Portfolio Colors */
+    --hero-bg: 192 84% 8%;
+    --hero-accent: 180 100% 25%;
+    --hero-glow: 175 100% 35%;
+    --nav-bg: 193 70% 12%;
+    --glass-bg: 193 70% 12%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 25%), hsl(168 84% 30%));
+    --gradient-hero: linear-gradient(135deg, hsl(192 84% 8%) 0%, hsl(193 70% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(193 70% 12%) 0%, hsl(193 70% 15%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(180 100% 25% / 0.3), transparent 70%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(180 100% 25% / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(192 84% 8% / 0.3);
+    --shadow-elevated: 0 20px 40px -10px hsl(192 84% 8% / 0.4);
+  }
+
+  /* Sunset Orange Theme - Updated with darker, richer sunset tones */
+  .sunset {
+    --background: 20 100% 8%;
+    --foreground: 30 100% 92%;
+
+    --card: 24 100% 12%;
+    --card-foreground: 30 100% 92%;
+
+    --popover: 24 100% 12%;
+    --popover-foreground: 30 100% 92%;
+
+    --primary: 25 100% 45%;
+    --primary-foreground: 20 100% 8%;
+    --primary-glow: 35 100% 55%;
+
+    --secondary: 24 100% 18%;
+    --secondary-foreground: 30 100% 92%;
+
+    --muted: 24 100% 15%;
+    --muted-foreground: 30 40% 70%;
+
+    --accent: 15 100% 50%;
+    --accent-foreground: 20 100% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 100% 92%;
+
+    --border: 24 100% 18%;
+    --input: 24 100% 18%;
+    --ring: 25 100% 45%;
+
+    /* Custom Portfolio Colors */
+    --hero-bg: 20 100% 8%;
+    --hero-accent: 25 100% 45%;
+    --hero-glow: 35 100% 55%;
+    --nav-bg: 24 100% 12%;
+    --glass-bg: 24 100% 12%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(25 100% 45%), hsl(15 100% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(20 100% 8%) 0%, hsl(24 100% 12%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(24 100% 12%) 0%, hsl(24 100% 15%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(25 100% 45% / 0.3), transparent 70%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(25 100% 45% / 0.3);
+    --shadow-card: 0 10px 30px -5px hsl(20 100% 8% / 0.3);
+    --shadow-elevated: 0 20px 40px -10px hsl(20 100% 8% / 0.4);
   }
 
   .light {
@@ -213,5 +305,28 @@
       opacity: 1;
       transform: translateX(0);
     }
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  .fade-in-left {
+    transform: translateX(30px);
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+  
+  .fade-in-right {
+    transform: translateX(-30px);
+    animation: fadeInRight 0.6s ease-out forwards;
+  }
+  
+  .link-underline::after {
+    right: 0;
+    left: auto;
+    origin-bottom-left: origin-bottom-right;
+  }
+  
+  .link-underline:hover::after {
+    origin-bottom-right: origin-bottom-left;
   }
 }

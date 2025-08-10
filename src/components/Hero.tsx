@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Download, ExternalLink } from "lucide-react";
-const profilePhoto = "/lovable-uploads/a01cd834-4d25-427a-aa54-9981abf604c3.png";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
+const profilePhoto = "/lovable-uploads/abba735f-7594-454e-972e-d27d7c03ae30.png";
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-hero relative overflow-hidden">
       {/* Background Glow */}
@@ -13,15 +17,10 @@ const Hero = () => {
           {/* Text Content */}
           <div className="text-center lg:text-left fade-in-left">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              I Will
-              <br />
-              <span className="gradient-text">Do It</span>
-              <br />
-              For You
+              {t.hero.title}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              I'm a passionate web designer with expertise in creating visually appealing and engaging websites. 
-              I specialize in HTML, CSS, JavaScript, and modern design tools to craft exceptional user experiences.
+              {t.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
@@ -30,7 +29,7 @@ const Hero = () => {
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <ExternalLink className="mr-2" size={20} />
-                Hire Me
+                {t.hero.hireMe}
               </Button>
             </div>
           </div>
@@ -41,7 +40,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-primary rounded-full blur-3xl opacity-30 scale-110"></div>
               <img
                 src={profilePhoto}
-                alt="Professional headshot"
+                alt={t.hero.profileAlt}
                 className="relative z-10 w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-primary/20 shadow-elevated float"
               />
             </div>

@@ -1,17 +1,23 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Home, User, Briefcase, Mail, Settings } from "lucide-react";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const navItems = [
-    { id: "home", label: "Home", icon: Home },
-    { id: "about", label: "About", icon: User },
-    { id: "work", label: "Work", icon: Briefcase },
-    { id: "services", label: "Services", icon: Settings },
-    { id: "contact", label: "Contact", icon: Mail },
+    { id: "home", label: t.nav.home, icon: Home },
+    { id: "about", label: t.nav.about, icon: User },
+    { id: "work", label: t.nav.work, icon: Briefcase },
+    { id: "services", label: t.nav.services, icon: Settings },
+    { id: "contact", label: t.nav.contact, icon: Mail },
   ];
 
   useEffect(() => {
@@ -52,7 +58,7 @@ const Navigation = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <h1 className="text-2xl font-bold gradient-text">
-                  My Portfolio
+                  {t.nav.portfolio}
                 </h1>
               </div>
             </div>
@@ -79,14 +85,18 @@ const Navigation = () => {
               </div>
             </div>
             
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {isOpen ? <X size={20} /> : <Menu size={20} />}
-              </Button>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+              <ThemeSwitcher />
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  {isOpen ? <X size={20} /> : <Menu size={20} />}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -115,6 +125,10 @@ const Navigation = () => {
                   </button>
                 );
               })}
+              <div className="pt-2 border-t border-border/50 flex gap-2">
+                <LanguageSwitcher />
+                <ThemeSwitcher />
+              </div>
             </div>
           </nav>
         </div>
