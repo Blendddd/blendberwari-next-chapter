@@ -89,16 +89,16 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">{t.contact.title}</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <a href="mailto:blendd.22@outlook.com" className="hover:text-primary transition-colors link-underline">
-                  blendd.22@outlook.com
+                <a href="mailto:blendberwari25@gmail.com" className="hover:text-primary transition-colors link-underline">
+                  blendberwari25@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+966555123456" className="hover:text-primary transition-colors link-underline">
-                  +966 555 123 456
+                <a href="tel:+964750335185" className="hover:text-primary transition-colors link-underline">
+                  +964 (750) 335 18 53
                 </a>
               </li>
-              <li>Riyadh, Saudi Arabia</li>
+              <li>Zakho, Kurdistan</li>
             </ul>
           </div>
         </div>
