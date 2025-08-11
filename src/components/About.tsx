@@ -1,8 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Palette, Smartphone, Globe } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const skills = [
     { category: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript"] },
     { category: "Design", items: ["Adobe Photoshop", "Sketch", "Figma", "UI/UX Design"] },
@@ -13,23 +18,23 @@ const About = () => {
   const features = [
     {
       icon: Code2,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable, and efficient code following best practices."
+      title: "5+",
+      description: t.about.experience
     },
     {
       icon: Palette,
-      title: "Creative Design",
-      description: "Crafting beautiful and intuitive user interfaces with attention to detail."
+      title: "50+",
+      description: t.about.projects
     },
     {
       icon: Smartphone,
-      title: "Responsive",
-      description: "Creating websites that work seamlessly across all devices and screen sizes."
+      title: "30+",
+      description: t.about.clients
     },
     {
       icon: Globe,
-      title: "Web Standards",
-      description: "Following modern web standards and accessibility guidelines for better user experience."
+      title: t.about.skills,
+      description: "HTML, CSS, JavaScript, React, TypeScript"
     }
   ];
 
@@ -38,13 +43,10 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            About <span className="gradient-text">Me</span>
+            {t.about.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm a web designer with a passion for creating visually appealing and engaging websites. 
-            I have expertise in HTML, CSS, and JavaScript, and am skilled in using design software 
-            such as Adobe Photoshop and Sketch. With a focus on user experience (UX) design principles, 
-            I strive to create websites that are both functional and easy to navigate.
+            {t.about.description}
           </p>
         </div>
 

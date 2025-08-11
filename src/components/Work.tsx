@@ -3,9 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Github } from "lucide-react";
-import { useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 const Work = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const projects = [
     {
       title: "Lanova Restaurant",
@@ -46,11 +49,10 @@ const Work = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            My <span className="gradient-text">Work</span>
+            {t.work.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Here are some of my recent projects showcasing my skills in web development, 
-            design, and user experience. Each project represents a unique challenge and solution.
+            {t.work.description}
           </p>
         </div>
 
@@ -92,14 +94,14 @@ const Work = () => {
                  <div className="flex gap-3">
                    <Dialog>
                      <DialogTrigger asChild>
-                       <Button 
-                         size="sm" 
-                         className="flex-1"
-                         disabled={project.status === "Planning" || project.liveUrl === "#"}
-                       >
-                         <ExternalLink size={16} className="mr-2" />
-                         View Live
-                       </Button>
+                        <Button 
+                          size="sm" 
+                          className="flex-1"
+                          disabled={project.status === "Planning" || project.liveUrl === "#"}
+                        >
+                          <ExternalLink size={16} className="mr-2" />
+                          {t.work.liveDemo}
+                        </Button>
                      </DialogTrigger>
                      <DialogContent className="max-w-6xl max-h-[90vh] p-0">
                        <DialogHeader className="p-6 pb-0">

@@ -1,7 +1,11 @@
 
 import { Github, Instagram, X, Heart } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
@@ -35,10 +39,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">My Portfolio</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">{t.nav.portfolio}</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
-              I'm a passionate web designer creating beautiful, functional websites 
-              that help businesses grow and succeed in the digital world.
+              {t.hero.description}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
@@ -64,10 +67,10 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { label: "Home", id: "home" },
-                { label: "About", id: "about" },
-                { label: "Work", id: "work" },
-                { label: "Services", id: "services" }
+                { label: t.nav.home, id: "home" },
+                { label: t.nav.about, id: "about" },
+                { label: t.nav.work, id: "work" },
+                { label: t.nav.services, id: "services" }
               ].map((link) => (
                 <li key={link.id}>
                   <button
@@ -83,29 +86,29 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Get in Touch</h4>
+            <h4 className="font-semibold mb-4">{t.contact.title}</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <a href="mailto:hello@portfolio.com" className="hover:text-primary transition-colors link-underline">
-                  hello@portfolio.com
+                <a href="mailto:blendd.22@outlook.com" className="hover:text-primary transition-colors link-underline">
+                  blendd.22@outlook.com
                 </a>
               </li>
               <li>
-                <a href="tel:+15551234567" className="hover:text-primary transition-colors link-underline">
-                  +1 (555) 123-4567
+                <a href="tel:+966555123456" className="hover:text-primary transition-colors link-underline">
+                  +966 555 123 456
                 </a>
               </li>
-              <li>San Francisco, CA</li>
+              <li>Riyadh, Saudi Arabia</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} My Portfolio. All rights reserved.
+            {t.footer.copyright}
           </p>
           <p className="text-muted-foreground text-sm flex items-center mt-4 sm:mt-0">
-            Made with <Heart size={16} className="text-red-500 mx-1" /> using React & TypeScript
+            Made with <Heart size={16} className="text-red-500 mx-1" /> {t.footer.builtWith}
           </p>
         </div>
       </div>

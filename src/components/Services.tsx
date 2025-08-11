@@ -1,27 +1,32 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Code, Palette, Smartphone, Globe, Zap, Users } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { translations } from "@/lib/translations";
 
 const Services = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const services = [
     {
       icon: Code,
-      title: "Web Development",
-      description: "Custom web applications built with modern technologies and best practices.",
+      title: t.services.webDevelopment.title,
+      description: t.services.webDevelopment.description,
       features: ["React & TypeScript", "Responsive Design", "Performance Optimization", "Clean Code"],
       price: "Starting from $999"
     },
     {
       icon: Palette,
-      title: "UI/UX Design",
-      description: "Beautiful and intuitive user interfaces that enhance user experience.",
+      title: t.services.uiux.title,
+      description: t.services.uiux.description,
       features: ["User Research", "Wireframing", "Prototyping", "Visual Design"],
       price: "Starting from $599"
     },
     {
       icon: Globe,
-      title: "Website Design",
-      description: "Professional websites that represent your brand and engage your audience.",
+      title: t.services.webDesign.title,
+      description: t.services.webDesign.description,
       features: ["Custom Design", "CMS Integration", "SEO Optimization", "Analytics Setup"],
       price: "Starting from $799"
     }
@@ -32,12 +37,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            My <span className="gradient-text">Services</span>
+            {t.services.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I offer a comprehensive range of web development and design services 
-            to help bring your digital vision to life. From concept to deployment, 
-            I've got you covered.
+            {t.services.description}
           </p>
         </div>
 
