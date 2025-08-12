@@ -19,7 +19,7 @@ const About = () => {
     {
       icon: Code2,
       title: "Clean Code",
-      description: t.about.experience
+      description: "HTML, CSS, JavaScript, React, TypeScript"
     },
     {
       icon: Palette,
