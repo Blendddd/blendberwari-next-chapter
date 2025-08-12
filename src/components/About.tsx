@@ -18,12 +18,12 @@ const About = () => {
   const features = [
     {
       icon: Code2,
-      title: "5+",
+      title: "Clean Code",
       description: t.about.experience
     },
     {
       icon: Palette,
-      title: "50+",
+      title: "Creative design",
       description: t.about.projects
     },
     {
