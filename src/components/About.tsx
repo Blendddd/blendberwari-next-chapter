@@ -28,7 +28,7 @@ const About = () => {
     },
     {
       icon: Smartphone,
-      title: "30+",
+      title: "Mobile Responsive",
       description: t.about.clients
     },
     {
