@@ -35,12 +35,12 @@ const Work = () => {
       status: "In Progress"
     },
     {
-      title: "E-commerce Platform",
-      description: "Custom e-commerce solution with payment integration, inventory management, and admin dashboard. Mobile-first approach with PWA features.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop&crop=center",
-      tags: ["React", "Stripe", "PWA", "Firebase"],
-      liveUrl: "#",
-      status: "Planning"
+      title: "Moonlight Cafe",
+      description: "Showcase website for a fine dining restaurant featuring beautiful imagery, chef profiles, and reservation integration with modern animations.",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500&h=300&fit=crop&crop=center",
+      tags: ["HTML5", "CSS3", "JavaScript", "UI/UX"],
+      liveUrl: "https://moonlight-cofe-rest.lovable.app/",
+      status: "Live"
     }
   ];
 
