@@ -73,7 +73,7 @@ export const translations = {
     // Footer
     footer: {
       copyright: "© 2025 My Portfolio. All rights reserved.",
-      builtWith: "Built with React & TypeScript"
+      builtWith: "Blend Berwari"
     },
     // Theme
     theme: {
@@ -163,7 +163,7 @@ export const translations = {
     // Footer
     footer: {
       copyright: "© 2025 معرض أعمالي. جميع الحقوق محفوظة.",
-      builtWith: "مبني بـ React و TypeScript"
+      builtWith: "بليند بيرواري"
     },
     // Theme
     theme: {
