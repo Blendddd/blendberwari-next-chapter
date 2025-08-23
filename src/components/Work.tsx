@@ -41,6 +41,22 @@ const Work = () => {
       tags: ["HTML5", "CSS3", "JavaScript", "UI/UX"],
       liveUrl: "https://moonlight-cofe-rest.lovable.app/",
       status: "Live"
+    },
+    {
+      title: "Qahraman Portfolio",
+      description: "Professional portfolio website showcasing creative work and projects with modern design, smooth animations, and responsive layout.",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop&crop=center",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Portfolio"],
+      liveUrl: "https://qahraman-portfolio.lovable.app/",
+      status: "Live"
+    },
+    {
+      title: "Muhammed Portfolio",
+      description: "Personal portfolio website featuring elegant design, project showcases, and professional presentation with modern web technologies.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop&crop=center",
+      tags: ["React", "Modern Design", "Responsive", "Portfolio"],
+      liveUrl: "https://muhammed.lovable.app/",
+      status: "Live"
     }
   ];
 
