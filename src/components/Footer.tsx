@@ -108,7 +108,7 @@ const Footer = () => {
             {t.footer.copyright}
           </p>
           <p className="text-muted-foreground text-sm flex items-center mt-4 sm:mt-0">
-            Made by <Heart size={16} className="text-red-500 mx-1" /> {t.footer.builtWith}
+            Made by  {t.footer.builtWith}
           </p>
         </div>
       </div>
