@@ -72,7 +72,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      copyright: "© 2024 My Portfolio. All rights reserved.",
+      copyright: "© 2025 My Portfolio. All rights reserved.",
       builtWith: "Built with React & TypeScript"
     },
     // Theme
@@ -162,7 +162,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      copyright: "© 2024 معرض أعمالي. جميع الحقوق محفوظة.",
+      copyright: "© 2025 معرض أعمالي. جميع الحقوق محفوظة.",
       builtWith: "مبني بـ React و TypeScript"
     },
     // Theme
