@@ -5,6 +5,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { translations } from "@/lib/translations";
+import qahramanPortfolioImg from "@/assets/qahraman-portfolio.png";
+import muhammedPortfolioImg from "@/assets/muhammed-portfolio.png";
 
 const Work = () => {
   const { language } = useLanguage();
@@ -45,16 +47,16 @@ const Work = () => {
     {
       title: "Qahraman Portfolio",
       description: "Professional portfolio website showcasing creative work and projects with modern design, smooth animations, and responsive layout.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop&crop=center",
+      image: qahramanPortfolioImg,
       tags: ["React", "TypeScript", "Tailwind CSS", "Portfolio"],
       liveUrl: "https://qahraman-portfolio.lovable.app/",
       status: "Live"
     },
     {
-      title: "Muhammed Portfolio",
-      description: "Personal portfolio website featuring elegant design, project showcases, and professional presentation with modern web technologies.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&h=300&fit=crop&crop=center",
-      tags: ["React", "Modern Design", "Responsive", "Portfolio"],
+      title: "Muhammed Portfolio", 
+      description: "Education-focused portfolio for passionate educator and mentor, showcasing teaching experience and student success with professional presentation.",
+      image: muhammedPortfolioImg,
+      tags: ["React", "Education", "Responsive", "Portfolio"],
       liveUrl: "https://muhammed.lovable.app/",
       status: "Live"
     }
