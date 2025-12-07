@@ -7,23 +7,281 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "13.0.4"
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_actions: {
+        Row: {
+          action_type: string
+          admin_user_id: string
+          coin_adjustment: number | null
+          created_at: string
+          id: string
+          new_balance: number | null
+          old_balance: number | null
+          reason: string
+          target_user_id: string
+        }
+        Insert: {
+          action_type: string
+          admin_user_id: string
+          coin_adjustment?: number | null
+          created_at?: string
+          id?: string
+          new_balance?: number | null
+          old_balance?: number | null
+          reason: string
+          target_user_id: string
+        }
+        Update: {
+          action_type?: string
+          admin_user_id?: string
+          coin_adjustment?: number | null
+          created_at?: string
+          id?: string
+          new_balance?: number | null
+          old_balance?: number | null
+          reason?: string
+          target_user_id?: string
+        }
+        Relationships: []
+      }
+      game_sessions: {
+        Row: {
+          coins_earned: number
+          completed_at: string
+          duration_seconds: number | null
+          game_type: string
+          id: string
+          score: number
+          user_id: string
+        }
+        Insert: {
+          coins_earned?: number
+          completed_at?: string
+          duration_seconds?: number | null
+          game_type: string
+          id?: string
+          score?: number
+          user_id: string
+        }
+        Update: {
+          coins_earned?: number
+          completed_at?: string
+          duration_seconds?: number | null
+          game_type?: string
+          id?: string
+          score?: number
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "game_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "game_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      game_users: {
+        Row: {
+          auth_id: string | null
+          coin_balance: number
+          coins_earned_today: number
+          created_at: string
+          daily_coin_limit: number
+          display_name: string | null
+          email: string | null
+          id: string
+          last_daily_reset: string
+          last_game_played: string | null
+          phone: string | null
+          total_coins_earned: number
+          updated_at: string
+        }
+        Insert: {
+          auth_id?: string | null
+          coin_balance?: number
+          coins_earned_today?: number
+          created_at?: string
+          daily_coin_limit?: number
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          last_daily_reset?: string
+          last_game_played?: string | null
+          phone?: string | null
+          total_coins_earned?: number
+          updated_at?: string
+        }
+        Update: {
+          auth_id?: string | null
+          coin_balance?: number
+          coins_earned_today?: number
+          created_at?: string
+          daily_coin_limit?: number
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          last_daily_reset?: string
+          last_game_played?: string | null
+          phone?: string | null
+          total_coins_earned?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      redemptions: {
+        Row: {
+          coins_spent: number
+          created_at: string
+          expires_at: string
+          id: string
+          item_name: string
+          item_price: number
+          redeemed_at: string | null
+          redemption_code: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          coins_spent: number
+          created_at?: string
+          expires_at?: string
+          id?: string
+          item_name: string
+          item_price: number
+          redeemed_at?: string | null
+          redemption_code: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          coins_spent?: number
+          created_at?: string
+          expires_at?: string
+          id?: string
+          item_name?: string
+          item_price?: number
+          redeemed_at?: string | null
+          redemption_code?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "redemptions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "game_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      admin_adjust_user_coins: {
+        Args: {
+          p_coin_adjustment: number
+          p_reason: string
+          p_target_user_id: string
+        }
+        Returns: Json
+      }
+      award_coins: {
+        Args: {
+          p_duration_seconds?: number
+          p_game_type: string
+          p_score: number
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      create_redemption: {
+        Args: {
+          p_coins_required: number
+          p_item_name: string
+          p_user_id: string
+        }
+        Returns: Json
+      }
+      current_user_has_role: {
+        Args: { _role: Database["public"]["Enums"]["app_role"] }
+        Returns: boolean
+      }
+      get_all_users_admin: {
+        Args: never
+        Returns: {
+          coin_balance: number
+          coins_earned_today: number
+          created_at: string
+          display_name: string
+          email: string
+          id: string
+          last_game_played: string
+          phone: string
+          total_coins_earned: number
+          total_games: number
+          total_redemptions: number
+        }[]
+      }
+      get_staff_redemptions: {
+        Args: never
+        Returns: {
+          coins_spent: number
+          created_at: string
+          customer_name: string
+          expires_at: string
+          id: string
+          item_name: string
+          masked_email: string
+          redeemed_at: string
+          redemption_code: string
+          status: string
+        }[]
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "staff" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +408,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "staff", "user"],
+    },
   },
 } as const

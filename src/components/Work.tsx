@@ -29,11 +29,11 @@ const Work = () => {
       status: "Live"
     },
     {
-      title: "Modern Web Application",
-      description: "Full-stack web application with clean interface, real-time features, and comprehensive dashboard. Currently in development phase.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&crop=center",
-      tags: ["React", "TypeScript", "Node.js", "MongoDB"],
-      liveUrl: "#",
+      title: "Discover Kurdistan Guide",
+      description: "Travel guide website showcasing the beauty of Kurdistan with destination highlights, cultural insights, and travel information. Currently in development phase.",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&h=300&fit=crop&crop=center",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Travel"],
+      liveUrl: "https://discover-kurdistan-guide.lovable.app/",
       status: "In Progress"
     },
     {
