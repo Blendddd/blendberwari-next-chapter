@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/4d1e1726-1515-492a-9429-9887dd5e2773
+**URL**: https://blendberwari-next-chapter.lovable.app/
 
 ## How can I edit this code?
 
