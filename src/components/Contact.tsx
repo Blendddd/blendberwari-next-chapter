@@ -23,16 +23,19 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
+    // Hand the message off to the visitor's email client so it actually reaches the inbox.
+    const subject = encodeURIComponent(formData.subject || `New message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:blendberwari25@gmail.com?subject=${subject}&body=${body}`;
+
     toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
+      title: "Opening your email app",
+      description: "Send the prepared email and I'll get back to you soon.",
     });
-    
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
     setIsSubmitting(false);
   };
 
@@ -48,13 +51,13 @@ const Contact = () => {
       icon: Mail,
       label: "Email",
       value: "blendberwari25@gmail.com",
-      href: "mailto:blendberwari25@gmail,com"
+      href: "mailto:blendberwari25@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+964 (750) 335 18 53",
-      href: "tel:+964 0750 335 18 53"
+      href: "tel:+9647503351853"
     },
     {
       icon: MapPin,

@@ -11,10 +11,10 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: "I Will Do It For You",
+      title: "Blend Berwari — Web Designer & Developer",
       description: "I'm a passionate web designer with expertise in creating visually appealing and engaging websites. I specialize in HTML, CSS, JavaScript, and modern design tools to craft exceptional user experiences.",
       hireMe: "Hire Me",
-      profileAlt: "Professional headshot"
+      profileAlt: "Professional headshot of Blend Berwari, web designer and developer"
     },
     // About Section
     about: {
@@ -101,10 +101,10 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: "سأنجز العمل من أجلك",
+      title: "بليند بيرواري — مصمم ومطور ويب",
       description: "أنا مصمم ويب شغوف بخبرة في إنشاء مواقع ويب جذابة وممتعة بصرياً. أتخصص في HTML و CSS و JavaScript وأدوات التصميم الحديثة لصياغة تجارب مستخدم استثنائية.",
       hireMe: "وظفني",
-      profileAlt: "صورة شخصية مهنية"
+      profileAlt: "صورة شخصية مهنية لبليند بيرواري، مصمم ومطور ويب"
     },
     // About Section
     about: {
