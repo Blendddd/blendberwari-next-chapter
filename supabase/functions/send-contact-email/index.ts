@@ -86,9 +86,6 @@ Deno.serve(async (req) => {
     if (!supabaseUrl || !serviceKey) {
       throw new Error('Supabase environment is not configured');
     }
-    if (!resendApiKey) {
-      throw new Error('RESEND_API_KEY is not configured');
-    }
 
     // 1) Persist the message first, so it is never lost even if email fails.
     const supabase = createClient(supabaseUrl, serviceKey);
@@ -107,7 +104,14 @@ Deno.serve(async (req) => {
       });
     }
 
-    // 2) Email the site owner.
+    // 2) Email the site owner, when the email service is configured.
+    if (!resendApiKey) {
+      console.warn('RESEND_API_KEY is not configured — message stored, no email sent.');
+      return new Response(JSON.stringify({ success: true, emailed: false }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const html = `
       <h2>New message from your portfolio</h2>
       <p><strong>Name:</strong> ${escapeHtml(data.name)}</p>
@@ -148,7 +152,7 @@ Deno.serve(async (req) => {
     const emailResult = await emailResponse.json();
     console.log('Contact email sent:', emailResult?.id ?? 'unknown id');
 
-    return new Response(JSON.stringify({ success: true, id: emailResult?.id ?? null }), {
+    return new Response(JSON.stringify({ success: true, emailed: true, id: emailResult?.id ?? null }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (err) {
