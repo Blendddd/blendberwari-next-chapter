@@ -68,7 +68,12 @@ export const translations = {
       namePlaceholder: "Your Name",
       emailPlaceholder: "your.email@example.com",
       messagePlaceholder: "Tell me about your project...",
-      socialTitle: "Follow Me"
+      socialTitle: "Follow Me",
+      sending: "Sending...",
+      successTitle: "Message sent",
+      successDescription: "Thanks for reaching out — I'll get back to you soon.",
+      errorTitle: "Message could not be sent",
+      errorDescription: "Something went wrong. Please email me directly at"
     },
     // Footer
     footer: {
@@ -158,7 +163,12 @@ export const translations = {
       namePlaceholder: "اسمك",
       emailPlaceholder: "your.email@example.com",
       messagePlaceholder: "أخبرني عن مشروعك...",
-      socialTitle: "تابعني"
+      socialTitle: "تابعني",
+      sending: "جارٍ الإرسال...",
+      successTitle: "تم إرسال الرسالة",
+      successDescription: "شكراً لتواصلك — سأرد عليك قريباً.",
+      errorTitle: "لم يتم إرسال الرسالة",
+      errorDescription: "حدث خطأ ما. يُرجى مراسلتي مباشرة على"
     },
     // Footer
     footer: {
