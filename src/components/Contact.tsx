@@ -204,6 +204,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        maxLength={100}
                         placeholder={t.contact.namePlaceholder}
                         className="bg-background/50"
                       />
@@ -219,6 +220,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        maxLength={200}
                         placeholder={t.contact.emailPlaceholder}
                         className="bg-background/50"
                       />
@@ -235,6 +237,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
+                      maxLength={200}
                       placeholder="What's this about?"
                       className="bg-background/50"
                     />
