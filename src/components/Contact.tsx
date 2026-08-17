@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FunctionsHttpError } from "@supabase/supabase-js";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,6 +8,9 @@ import { Mail, Phone, MapPin, Send, Github, Instagram, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/hooks/useLanguage";
 import { translations } from "@/lib/translations";
+import { supabase } from "@/integrations/supabase/client";
+
+const OWNER_EMAIL = "blendberwari25@gmail.com";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -16,7 +20,8 @@ const Contact = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
+    honeypot: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -24,19 +29,38 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Hand the message off to the visitor's email client so it actually reaches the inbox.
-    const subject = encodeURIComponent(formData.subject || `New message from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    );
-    window.location.href = `mailto:blendberwari25@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          honeypot: formData.honeypot,
+        },
+      });
 
-    toast({
-      title: "Opening your email app",
-      description: "Send the prepared email and I'll get back to you soon.",
-    });
+      if (error) {
+        const details =
+          error instanceof FunctionsHttpError ? await error.context.text() : error.message;
+        console.error("send-contact-email failed:", details);
+        throw new Error(details);
+      }
 
-    setIsSubmitting(false);
+      toast({
+        title: t.contact.successTitle,
+        description: t.contact.successDescription,
+      });
+      setFormData({ name: "", email: "", subject: "", message: "", honeypot: "" });
+    } catch {
+      toast({
+        variant: "destructive",
+        title: t.contact.errorTitle,
+        description: `${t.contact.errorDescription} ${OWNER_EMAIL}`,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -226,9 +250,23 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      maxLength={5000}
                       placeholder={t.contact.messagePlaceholder}
                       rows={5}
                       className="bg-background/50"
+                    />
+                  </div>
+
+                  {/* Hidden from real visitors; only bots fill this in. */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="honeypot">Leave this empty</label>
+                    <Input
+                      id="honeypot"
+                      name="honeypot"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.honeypot}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -241,7 +279,7 @@ const Contact = () => {
                     {isSubmitting ? (
                       <div className="flex items-center">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2"></div>
-                        Sending...
+                        {t.contact.sending}
                       </div>
                     ) : (
                       <>
